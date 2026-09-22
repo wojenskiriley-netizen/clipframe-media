@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clipframe Media Policies</title>
+<meta name="description" content="Privacy Policy and Terms of Service for Clipframe Media's automated video-clipping and cross-posting tools.">
+<style>
+  :root{
+    --bg:#f7f5f0;
+    --surface:#ffffff;
+    --surface-2:#f0eee7;
+    --text:#17181b;
+    --text-dim:#5c5f66;
+    --border:#e3e0d8;
+    --accent:#c8402c;
+    --accent-2:#2f7a53;
+    --mono-tag:#8a6d1f;
+    --shadow: 0 1px 2px rgba(20,18,10,0.05);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#111114;
+      --surface:#17181c;
+      --surface-2:#1d1f24;
+      --text:#e9e7e1;
+      --text-dim:#9a9ca3;
+      --border:#2a2c32;
+      --accent:#e8604c;
+      --accent-2:#4fae7f;
+      --mono-tag:#c9a545;
+      --shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#111114;
+    --surface:#17181c;
+    --surface-2:#1d1f24;
+    --text:#e9e7e1;
+    --text-dim:#9a9ca3;
+    --border:#2a2c32;
+    --accent:#e8604c;
+    --accent-2:#4fae7f;
+    --mono-tag:#c9a545;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    font-size:16px;
+    line-height:1.6;
+  }
+  h1,h2,h3{
+    font-family:"Fraunces", Georgia, serif;
+    font-weight:600;
+    text-wrap:balance;
+    color:var(--text);
+  }
+  a{color:var(--accent);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+
+  .shell{
+    max-width:1180px;
+    margin:0 auto;
+    padding-inline:20px;
+    display:grid;
+    grid-template-columns:220px minmax(0,1fr);
+    gap:48px;
+  }
+  @media (max-width:860px){
+    .shell{grid-template-columns:1fr;}
+  }
+
+  .topbar{
+    border-bottom:1px solid var(--border);
+    background:var(--surface);
+  }
+  .topbar-inner{
+    max-width:1180px;
+    margin:0 auto;
+    padding:22px 20px;
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .brand{
+    font-family:"Fraunces", Georgia, serif;
+    font-weight:600;
+    font-size:1.25rem;
+    letter-spacing:-0.01em;
+  }
+  .brand .dot{color:var(--accent);}
+  .eyebrow{
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--text-dim);
+  }
+
+  nav.toc{
+    position:sticky;
+    top:24px;
+    align-self:start;
+    padding-top:40px;
+  }
+  @media (max-width:860px){
+    nav.toc{position:static; padding-top:24px;}
+  }
+  nav.toc .toc-label{
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:0.7rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--text-dim);
+    margin-bottom:10px;
+  }
+  nav.toc ul{list-style:none; margin:0 0 22px; padding:0;}
+  nav.toc li{margin-bottom:2px;}
+  nav.toc a{
+    display:block;
+    padding:6px 0 6px 12px;
+    border-left:2px solid var(--border);
+    color:var(--text-dim);
+    text-decoration:none;
+    font-size:0.92rem;
+  }
+  nav.toc a:hover{color:var(--text); border-left-color:var(--accent);}
+  nav.toc .doc-switch a{
+    border-left:none;
+    padding-left:0;
+    font-weight:600;
+    color:var(--text);
+  }
+  nav.toc .doc-switch{margin-bottom:24px; padding-bottom:18px; border-bottom:1px solid var(--border);}
+  nav.toc .doc-switch a.current{color:var(--accent);}
+
+  main{padding-top:40px; padding-bottom:96px; min-width:0;}
+
+  .doc-header{margin-bottom:36px;}
+  .doc-header h1{font-size:2.1rem; margin:6px 0 10px;}
+  .meta-row{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:0.82rem;
+    color:var(--text-dim);
+  }
+  .meta-row b{color:var(--text); font-weight:500;}
+
+  section.doc{margin-bottom:80px;}
+  section.doc:last-child{margin-bottom:0;}
+
+  article h2{
+    font-size:1.35rem;
+    margin:0 0 4px;
+    scroll-margin-top:20px;
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+  }
+  article h2 .num{
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    color:var(--accent);
+    font-size:1rem;
+    font-weight:500;
+  }
+  article .clause{
+    padding:26px 0;
+    border-top:1px solid var(--border);
+  }
+  article .clause:first-of-type{border-top:none; padding-top:0;}
+  article p{margin:10px 0; max-width:66ch;}
+  article ul{margin:10px 0; padding-left:1.2em; max-width:64ch;}
+  article li{margin:4px 0;}
+
+  .lede{
+    color:var(--text-dim);
+    max-width:62ch;
+    font-size:1.02rem;
+  }
+
+  .tag{
+    display:inline-block;
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:0.72rem;
+    letter-spacing:0.03em;
+    color:var(--mono-tag);
+    background:var(--surface-2);
+    border:1px solid var(--border);
+    border-radius:4px;
+    padding:2px 7px;
+    margin:0 4px 4px 0;
+  }
+
+  .platform-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+    gap:10px;
+    margin:14px 0 6px;
+    max-width:64ch;
+  }
+  .platform-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:12px 14px;
+    box-shadow:var(--shadow);
+  }
+  .platform-card .name{font-weight:600; font-size:0.94rem;}
+  .platform-card a{font-size:0.82rem; text-decoration:none;}
+  .platform-card a:hover{text-decoration:underline;}
+
+  .callout{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-left:3px solid var(--accent-2);
+    border-radius:6px;
+    padding:14px 18px;
+    max-width:64ch;
+    margin:16px 0;
+    font-size:0.94rem;
+  }
+  .callout b{color:var(--accent-2);}
+
+  footer.disclaimer{
+    max-width:64ch;
+    margin-top:70px;
+    padding-top:22px;
+    border-top:1px solid var(--border);
+    color:var(--text-dim);
+    font-size:0.84rem;
+  }
+
+  #privacy-policy{scroll-margin-top:20px;}
+  #terms-of-service{scroll-margin-top:20px;}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="brand">Clipframe<span class="dot">.</span>Media</span>
+    <span class="eyebrow">Legal &amp; Data Practices</span>
+  </div>
+</div>
+
+<div class="shell">
+  <nav class="toc">
+    <div class="doc-switch">
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;">
+        <li><a href="#privacy-policy" class="current">Privacy Policy</a></li>
+        <li><a href="#terms-of-service">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="toc-label">On this page</div>
+    <ul>
+      <li><a href="#pp-overview">Overview</a></li>
+      <li><a href="#pp-data">Data we process</a></li>
+      <li><a href="#pp-use">How we use it</a></li>
+      <li><a href="#pp-platforms">Connected platforms</a></li>
+      <li><a href="#pp-storage">Storage &amp; security</a></li>
+      <li><a href="#pp-sharing">Sharing &amp; sale of data</a></li>
+      <li><a href="#pp-retention">Retention &amp; revocation</a></li>
+      <li><a href="#pp-children">Children's privacy</a></li>
+      <li><a href="#pp-changes">Changes</a></li>
+      <li><a href="#pp-contact">Contact</a></li>
+    </ul>
+    <ul>
+      <li><a href="#ts-acceptance">Acceptance</a></li>
+      <li><a href="#ts-service">The service</a></li>
+      <li><a href="#ts-content">Content &amp; ownership</a></li>
+      <li><a href="#ts-use">Acceptable use</a></li>
+      <li><a href="#ts-compliance">Platform compliance</a></li>
+      <li><a href="#ts-warranty">No warranty</a></li>
+      <li><a href="#ts-liability">Limitation of liability</a></li>
+      <li><a href="#ts-termination">Termination</a></li>
+      <li><a href="#ts-law">Governing law</a></li>
+      <li><a href="#ts-contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="doc" id="privacy-policy">
+      <article>
+        <div class="doc-header">
+          <span class="eyebrow">Document 1 of 2</span>
+          <h1>Privacy Policy</h1>
+          <p class="lede">How Clipframe Media handles data when it operates its own automated video-clipping and cross-posting tools on TikTok, YouTube, and Instagram.</p>
+          <div class="meta-row"><span>Effective <b>September 22, 2026</b></span><span>Operator <b>Clipframe Media</b></span></div>
+        </div>
+
+        <div class="clause" id="pp-overview">
+          <h2><span class="num">1</span> Overview</h2>
+          <p>Clipframe Media builds and runs software ("the Tools") that automatically edits highlight clips from video we own or are licensed to distribute, then publishes those clips to social accounts that Clipframe Media itself owns and operates on TikTok, YouTube, and Instagram.</p>
+          <p>This policy describes what data the Tools handle. It is written for API reviewers, platform partners, and anyone who wants to understand the data practices behind our TikTok Developer app and our other connected integrations. The Tools are internal, single-operator automation — they are not a public website or app that end users sign up for, and they do not collect information from the general public.</p>
+        </div>
+
+        <div class="clause" id="pp-data">
+          <h2><span class="num">2</span> Data we process</h2>
+          <p>The Tools process three kinds of data, all belonging to Clipframe Media's own accounts and content:</p>
+          <ul>
+            <li><b>OAuth credentials</b> — access and refresh tokens issued by TikTok, YouTube (Google), and Instagram (Meta) for the specific accounts Clipframe Media connects to the Tools.</li>
+            <li><b>Source video</b> — VOD recordings and episode files that Clipframe Media owns or holds distribution rights to.</li>
+            <li><b>Generated content</b> — the short-form clips, captions, and hashtags the Tools produce from that source video for posting.</li>
+          </ul>
+          <p>The Tools do not include a sign-up flow, a public-facing web app, or any mechanism for third parties to submit personal information. No visitor analytics, advertising identifiers, or device fingerprints are collected.</p>
+        </div>
+
+        <div class="clause" id="pp-use">
+          <h2><span class="num">3</span> How we use it</h2>
+          <p>Credentials are used exclusively to authenticate the Tools against each platform's API in order to publish Clipframe Media's own generated clips to Clipframe Media's own connected accounts. Nothing collected is used for advertising, profiling, resale, or any purpose unrelated to operating these accounts.</p>
+        </div>
+
+        <div class="clause" id="pp-platforms">
+          <h2><span class="num">4</span> Connected platforms</h2>
+          <p>Each platform governs its own handling of anything shared with it under its own policy:</p>
+          <div class="platform-list">
+            <div class="platform-card"><div class="name">TikTok</div><a href="https://www.tiktok.com/legal/page/global/privacy-policy/en" target="_blank" rel="noopener">Privacy Policy ↗</a></div>
+            <div class="platform-card"><div class="name">YouTube / Google</div><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy ↗</a></div>
+            <div class="platform-card"><div class="name">Instagram / Meta</div><a href="https://privacycenter.instagram.com/policy" target="_blank" rel="noopener">Privacy Policy ↗</a></div>
+          </div>
+        </div>
+
+        <div class="clause" id="pp-storage">
+          <h2><span class="num">5</span> Storage &amp; security</h2>
+          <p>OAuth tokens are stored locally on infrastructure that Clipframe Media controls, are not transmitted anywhere other than the issuing platform's own API endpoints, and are not accessible to any outside party.</p>
+        </div>
+
+        <div class="clause" id="pp-sharing">
+          <h2><span class="num">6</span> Sharing &amp; sale of data</h2>
+          <div class="callout"><b>We do not sell data.</b> Clipframe Media does not sell, rent, or share the credentials or content described above with any third party, and does not use them for cross-context behavioral advertising.</div>
+        </div>
+
+        <div class="clause" id="pp-retention">
+          <h2><span class="num">7</span> Retention &amp; revocation</h2>
+          <p>Tokens are retained only for as long as the corresponding account remains connected to the Tools. Access can be revoked at any time from each platform's own account or developer settings (for example, TikTok's "Manage third-party apps" screen); revocation takes effect immediately and Clipframe Media deletes the corresponding stored token on its next run.</p>
+        </div>
+
+        <div class="clause" id="pp-children">
+          <h2><span class="num">8</span> Children's privacy</h2>
+          <p>The Tools are internal business automation, not a service directed at children, and do not knowingly collect information from children.</p>
+        </div>
+
+        <div class="clause" id="pp-changes">
+          <h2><span class="num">9</span> Changes to this policy</h2>
+          <p>If Clipframe Media's data practices change materially, this page will be updated and the effective date above will change accordingly.</p>
+        </div>
+
+        <div class="clause" id="pp-contact">
+          <h2><span class="num">10</span> Contact</h2>
+          <p>Questions about this policy can be sent to <a href="mailto:wojenskiriley@gmail.com">wojenskiriley@gmail.com</a>.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="doc" id="terms-of-service">
+      <article>
+        <div class="doc-header">
+          <span class="eyebrow">Document 2 of 2</span>
+          <h1>Terms of Service</h1>
+          <p class="lede">The terms governing Clipframe Media's automated clipping and publishing tools.</p>
+          <div class="meta-row"><span>Effective <b>September 22, 2026</b></span><span>Operator <b>Clipframe Media</b></span></div>
+        </div>
+
+        <div class="clause" id="ts-acceptance">
+          <h2><span class="num">1</span> Acceptance</h2>
+          <p>By operating or authorizing the Tools against a TikTok, YouTube, or Instagram account, Clipframe Media agrees to these terms.</p>
+        </div>
+
+        <div class="clause" id="ts-service">
+          <h2><span class="num">2</span> The service</h2>
+          <p>The Tools are software that automatically identify highlight moments in source video, render them into vertical short-form clips with captions and hashtags, and publish the result to connected accounts on TikTok, YouTube Shorts, and Instagram Reels via each platform's official API.</p>
+          <span class="tag">TikTok Content Posting API</span><span class="tag">TikTok Login Kit</span><span class="tag">YouTube Data API</span><span class="tag">Instagram Graph API</span>
+        </div>
+
+        <div class="clause" id="ts-content">
+          <h2><span class="num">3</span> Content &amp; ownership</h2>
+          <p>All source video processed by the Tools is either owned by Clipframe Media or used under a license or distribution right Clipframe Media holds. Clips generated by the Tools are published only to accounts Clipframe Media itself owns and operates; the Tools do not publish on behalf of any other party.</p>
+        </div>
+
+        <div class="clause" id="ts-use">
+          <h2><span class="num">4</span> Acceptable use</h2>
+          <p>The Tools may only be used to publish lawful content that complies with the community guidelines of every destination platform. Clipframe Media is responsible for the accuracy, rights clearance, and appropriateness of everything the Tools publish.</p>
+        </div>
+
+        <div class="clause" id="ts-compliance">
+          <h2><span class="num">5</span> Platform compliance</h2>
+          <p>Use of the Tools is subject to, and must at all times comply with, the developer terms of each connected platform, including TikTok's Developer Terms of Service, YouTube's API Services Terms of Service, and Meta's Platform Terms.</p>
+        </div>
+
+        <div class="clause" id="ts-warranty">
+          <h2><span class="num">6</span> No warranty</h2>
+          <p>The Tools are provided "as is," without warranty of any kind, express or implied, including as to uninterrupted operation, accuracy of automatically generated captions or clip selection, or continued availability of any third-party API.</p>
+        </div>
+
+        <div class="clause" id="ts-liability">
+          <h2><span class="num">7</span> Limitation of liability</h2>
+          <p>To the fullest extent permitted by law, Clipframe Media disclaims liability for indirect, incidental, or consequential damages arising from use of the Tools, including account-level actions taken by a connected platform.</p>
+        </div>
+
+        <div class="clause" id="ts-termination">
+          <h2><span class="num">8</span> Termination</h2>
+          <p>Clipframe Media may disable or discontinue the Tools, or disconnect any account, at any time and without notice.</p>
+        </div>
+
+        <div class="clause" id="ts-law">
+          <h2><span class="num">9</span> Governing law</h2>
+          <p>These terms are governed by the laws of the jurisdiction in which Clipframe Media operates, without regard to conflict-of-law principles.</p>
+        </div>
+
+        <div class="clause" id="ts-contact">
+          <h2><span class="num">10</span> Contact</h2>
+          <p>Questions about these terms can be sent to <a href="mailto:wojenskiriley@gmail.com">wojenskiriley@gmail.com</a>.</p>
+        </div>
+
+        <footer class="disclaimer">
+          This page is a good-faith description of Clipframe Media's actual data practices, written to support third-party platform review (such as a TikTok Developer app audit). It is not a substitute for advice from a licensed attorney; Clipframe Media should have these terms reviewed by counsel before relying on them for broader legal compliance.
+        </footer>
+      </article>
+    </section>
+  </main>
+</div>
+</body>
+</html>
